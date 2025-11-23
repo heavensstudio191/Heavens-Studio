@@ -29,13 +29,14 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
+  padding: 2px 0; /* DIMINUIÇAO GERAL DO HEADER */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 2px 8px; /* NAVBAR MAIS BAIXA */
 }
 
 .logo {
@@ -72,18 +73,17 @@ header {
 /* ===== Main Section ===== */
 .main-section {
   height: 100vh;
-  background-image: url("src/img/PNG/Cor/fundo.png.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 80px;
+  margin-top: 0;
+  overflow: hidden; /* evita excesso de imagem */
 }
+
+
 
 .glow-circle {
   position: absolute;
@@ -120,6 +120,8 @@ header {
   justify-content: center;
   gap: 0.8rem;
   margin-top: 3rem;
+  z-index: 2;
+  position: relative;
 }
 
 .dot {
@@ -268,3 +270,43 @@ footer {
   text-align: center;
   padding: 1.5rem;
 }
+
+/* ===== Container das Imagens Sobrepostas ===== */
+.img-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* impede a imagem de bloquear cliques */
+  z-index: 0;
+  
+}
+
+/* Imagem de fundo */
+.img-base {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+/* Imagem superior (overlay) */
+.img-top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 50px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ← Mostra a imagem INTEIRA */
+  object-position: center;
+  opacity: 0.50;
+  filter: blur(0px);
+}
+
+
