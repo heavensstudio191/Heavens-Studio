@@ -1,37 +1,46 @@
-/* ===== Responsividade ===== */
+/* ==========================
+   RESPONSIVIDADE REAL
+   ========================== */
 
-/* Telas até 1024px */
+/* ===== Tablets ===== */
 @media (max-width: 1024px) {
 
+  /* NAVBAR */
   .navbar {
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   .nav-links {
-    gap: 1rem;
+    gap: 1.3rem;
   }
 
+  /* MAIN */
   .glass-box h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .glow-circle {
-    width: 350px;
-    height: 350px;
+    width: 380px;
+    height: 380px;
   }
 
-  .cards, .projetos-grid {
-    gap: 1.5rem;
+  .section {
+    padding: 5rem 8%;
   }
 }
 
-/* Telas até 768px */
+
+/* ===== Celulares grandes (768px) ===== */
 @media (max-width: 768px) {
+
+  /* ===== NAVBAR ===== */
+  header {
+    padding: 10px 0;
+  }
 
   .navbar {
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 10px 0;
+    gap: 10px;
   }
 
   .nav-links {
@@ -40,65 +49,118 @@
     gap: 1rem;
   }
 
-  .glass-box {
-    padding: 1rem 2rem;
-    margin-top: 5rem;
-  }
-
-  .glass-box h1 {
-    font-size: 1.8rem;
+  /* ===== MAIN SECTION ===== */
+  .main-section {
+    margin-top: 120px; /* mais espaço por causa do menu empilhado */
   }
 
   .glow-circle {
     width: 260px;
     height: 260px;
-  }
-
-  .section {
-    padding: 4rem 5%;
-  }
-
-  .cards, .projetos-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card, .projeto-card {
-    width: 90%;
-    max-width: 350px;
-  }
-}
-
-/* Telas até 480px */
-@media (max-width: 480px) {
-
-  .logo-img {
-    width: 30px;
-  }
-
-  .logo {
-    font-size: 0.9rem;
+    filter: blur(40px);
   }
 
   .glass-box {
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
   }
 
   .glass-box h1 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
-  .glow-circle {
-    width: 200px;
-    height: 200px;
-  }
-
-  .section h2 {
-    font-size: 1.6rem;
+  /* ===== TEXTOS ===== */
+  .section {
+    padding: 3.5rem 6%;
   }
 
   .section p {
     font-size: 1rem;
+    max-width: 90%;
+  }
+
+  /* ===== GRIDS ===== */
+  .cards,
+  .projetos-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+  }
+
+  .card,
+  .projeto-card {
+    width: 95%;
+    max-width: 350px;
+  }
+
+  .projeto-card img {
+    height: 180px;
+  }
+}
+
+
+
+/* ===== Celulares pequenos (480px) ===== */
+@media (max-width: 480px) {
+
+  /* NAVBAR */
+  .logo-img {
+    width: 30px;
+  }
+
+  .logo span {
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    gap: 0.7rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+
+  /* MAIN SECTION */
+  .main-section {
+    height: 90vh;
+    margin-top: 140px;
+  }
+
+  .glow-circle {
+    width: 180px;
+    height: 180px;
+    filter: blur(30px);
+  }
+
+  .glass-box {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .glass-box h1 {
+    font-size: 1.4rem;
+  }
+
+  .loading-bar {
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* TEXTOS */
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+  }
+
+  /* FORMULÁRIO */
+  form {
+    width: 90%;
   }
 }
