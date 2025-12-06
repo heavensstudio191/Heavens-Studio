@@ -1,15 +1,20 @@
 /* ==========================
-   RESPONSIVIDADE REAL (AJUSTADO)
-   ========================== */
+   RESPONSIVIDADE UNIFICADA + HERO
+========================== */
 
-/* ===== Tablets ===== */
+/* ===== Tablets (<= 1024px) ===== */
 @media (max-width: 1024px) {
+
+  /* HERO — img-top responsiva */
+  .img-top {
+    width: min(85vw, 500px);
+    max-height: 60vh;
+  }
 
   /* NAVBAR */
   .navbar {
     padding: 15px 20px;
   }
-
   .nav-links {
     gap: 1.3rem;
   }
@@ -18,34 +23,79 @@
   .glass-box h1 {
     font-size: 2.2rem;
   }
-
   .glow-circle {
     width: 380px;
     height: 380px;
   }
-
   .section {
     padding: 5rem 8%;
   }
+
+  /* PROJETOS */
+  .projetos-wrapper {
+    gap: 15px;
+  }
+  .flip-card,
+  .projeto-card-img {
+    width: 300px;
+    height: 200px;
+  }
+  .proj-arrow {
+    font-size: 35px;
+  }
+
+  /* CONTATO */
+  .contact-container {
+    gap: 15px;
+  }
+  .contact-info,
+  .contact-form {
+    width: 300px;
+  }
+  .contact-divider {
+    height: 350px;
+  }
 }
 
+/* ===== Celulares grandes (<= 900px) ===== */
+@media (max-width: 900px) {
 
-/* ===== Celulares grandes e menores (<= 768px) ===== */
+  /* SOBRE */
+  .sobre-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sobre-left,
+  .sobre-right {
+    width: 100%;
+  }
+  .sobre-divider {
+    display: none;
+  }
+  .sobre-item {
+    justify-content: center;
+  }
+}
+
+/* ===== Celulares grandes (<= 768px) ===== */
 @media (max-width: 768px) {
+
+  /* HERO — img-top responsiva */
+  .img-top {
+    width: min(90vw, 400px);
+    max-height: 55vh;
+  }
 
   /* NAVBAR */
   header {
     padding: 10px 0;
   }
-
   .navbar {
-    flex-direction: row; /* mantemos linha para logo + hamburger */
+    flex-direction: row;
     gap: 10px;
     align-items: center;
     padding: 10px 16px;
   }
-
-  /* Exibe o botão hamburger (visto apenas em mobile) */
   .hamburger {
     display: flex;
     width: 40px;
@@ -55,19 +105,16 @@
     cursor: pointer;
     border: none;
     background: transparent;
-    z-index: 1002; /* acima do menu */
+    z-index: 1002;
   }
-
   .hamburger span {
     display: block;
     height: 3.5px;
     width: 100%;
     border-radius: 4px;
-    background: #000; /* troque conforme tema */
+    background: #000;
     transition: transform 0.35s ease, opacity 0.2s ease;
   }
-
-  /* Estado aberto (X) */
   .hamburger.open span:nth-child(1) {
     transform: translateY(12px) rotate(45deg);
   }
@@ -78,17 +125,15 @@
     transform: translateY(-12px) rotate(-45deg);
   }
 
-  /* Transformar nav-links em drawer lateral */
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* escondido inicialmente */
+    right: -100%;
     height: 100vh;
     width: 78%;
     max-width: 320px;
-    background: rgba(255,255,255,0.06); /* glass-like */
+    background: rgba(255,255,255,0.06);
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     box-shadow: -12px 0 30px rgba(0,0,0,0.45);
     padding: 5.5rem 1.5rem;
     display: flex;
@@ -99,13 +144,9 @@
     z-index: 1001;
     list-style: none;
   }
-
-  /* Quando ativo (JS adiciona .nav-active) */
   .nav-links.nav-active {
     right: 0;
   }
-
-  /* Links estilizados para mobile */
   .nav-links li {
     width: 100%;
   }
@@ -114,93 +155,89 @@
     width: 100%;
     padding: 0.75rem 0.25rem;
     font-size: 1.05rem;
-    color: #000; /* ajuste conforme tema */
+    color: #000;
     text-decoration: none;
     font-weight: 600;
   }
 
-  /* overlay / backdrop para fechar clicando fora */
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0s linear 0.25s;
-    z-index: 1000;
-  }
-
-  .overlay.show {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 0s;
-  }
-
-  /* MAIN adjustments for mobile */
+  /* MAIN adjustments */
   .main-section {
-    margin-top: 120px; /* mais espaço por causa do menu empilhado */
+    margin-top: 120px;
   }
-
   .glow-circle {
     width: 260px;
     height: 260px;
     filter: blur(40px);
   }
-
   .glass-box {
     padding: 1rem 2rem;
     margin-top: 3rem;
   }
-
   .glass-box h1 {
     font-size: 1.8rem;
     text-align: center;
   }
-
-  /* TEXTOS */
   .section {
     padding: 3.5rem 6%;
   }
-
   .section p {
     font-size: 1rem;
     max-width: 90%;
   }
 
-  /* GRIDS */
+  /* PROJETOS */
   .cards,
-  .projetos-grid {
+  .projetos-wrapper {
     flex-direction: column;
     align-items: center;
     gap: 1.7rem;
   }
-
   .card,
-  .projeto-card {
+  .flip-card,
+  .projeto-card-img {
     width: 95%;
     max-width: 350px;
+    height: auto;
+  }
+  .projetos-carousel {
+    width: 100%;
+    gap: 15px;
+    justify-content: center;
+  }
+  .proj-arrow {
+    font-size: 30px;
   }
 
-  .projeto-card img {
-    height: 180px;
+  /* CONTATO */
+  .contact-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact-divider {
+    display: none;
+  }
+  .contact-info,
+  .contact-form {
+    width: 95%;
   }
 }
 
-
-
 /* ===== Celulares pequenos (<= 480px) ===== */
 @media (max-width: 480px) {
+
+  /* HERO — img-top responsiva */
+  .img-top {
+    width: 95vw;
+    max-height: 50vh;
+  }
 
   /* NAVBAR */
   .logo-img {
     width: 30px;
   }
-
   .logo span {
     font-size: 0.9rem;
   }
-
-  /* Ajuste do hamburger para telas bem pequenas */
   .hamburger {
     width: 34px;
     height: 28px;
@@ -208,62 +245,66 @@
   .hamburger span {
     height: 3px;
   }
-
-  /* Drawer ocupa toda a largura em telas muito pequenas */
   .nav-links {
     width: 100%;
     max-width: none;
     padding-top: 5.5rem;
+    gap: 0.7rem;
   }
-
   .nav-links li a {
     font-size: 1rem;
   }
 
-  .nav-links {
-    gap: 0.7rem;
-  }
-
-  /* MAIN SECTION */
+  /* MAIN */
   .main-section {
     height: 90vh;
     margin-top: 140px;
   }
-
   .glow-circle {
     width: 180px;
     height: 180px;
     filter: blur(30px);
   }
-
   .glass-box {
     padding: 0.8rem 1.2rem;
   }
-
   .glass-box h1 {
     font-size: 1.4rem;
   }
-
   .loading-bar {
     gap: 0.4rem;
   }
-
   .dot {
     width: 14px;
     height: 14px;
   }
-
-  /* TEXTOS */
   .section h2 {
     font-size: 1.5rem;
   }
-
   .section p {
     font-size: 0.95rem;
   }
-
-  /* FORMULÁRIO */
   form {
     width: 90%;
+  }
+
+  /* PROJETOS */
+  .flip-card,
+  .projeto-card-img {
+    width: 100%;
+    height: auto;
+  }
+  .proj-arrow {
+    font-size: 25px;
+  }
+  .projetos-carousel {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* CONTATO */
+  .contact-info,
+  .contact-form {
+    width: 100%;
   }
 }
